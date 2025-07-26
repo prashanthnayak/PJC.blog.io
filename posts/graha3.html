@@ -1,163 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Astrological Concepts Overview</title>
-  <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 1rem; }
-    table { border-collapse: collapse; width: 100%; margin-bottom: 1rem; }
-    th, td { border: 1px solid #ccc; padding: 0.5rem; text-align: left; }
-    h1, h2, h3 { color: #2c3e50; }
-    section { margin-bottom: 2rem; }
-    figure { text-align: center; margin: 2rem 0; }
-    figure img { max-width: 80%; height: auto; }
-    figcaption { font-style: italic; font-size: 0.9rem; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrological Concepts Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 25px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #2980b9;
+            margin-top: 20px;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        .concept {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .example {
+            background-color: #e8f5e8;
+            padding: 12px;
+            border-left: 4px solid #27ae60;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        .note {
+            background-color: #fff3cd;
+            padding: 12px;
+            border-left: 4px solid #ffc107;
+            margin: 10px 0;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        th {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        tr:hover {
+            background-color: #e3f2fd;
+        }
+        strong {
+            color: #2c3e50;
+        }
+        em {
+            color: #8e44ad;
+            font-style: italic;
+        }
+        figure {
+            text-align: center;
+            margin: 2rem 0;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px dashed #bdc3c7;
+        }
+        figure img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        figcaption {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #ecf0f1;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        .vishnu-note {
+            background: linear-gradient(135deg, #e8f5e8, #d5f4e6);
+            padding: 15px;
+            border-left: 4px solid #27ae60;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+    </style>
 </head>
 <body>
-  <h1>Astrological Concepts Overview</h1>
+    <div class="container">
+        <h1>Astrological Concepts Overview</h1>
 
-  <figure>
-    <img src="images/bhava_chakra.png" alt="Bhava Chakra diagram" />
-    <figcaption>Illustration: Bhava Chakra (Bhava Charka)</figcaption>
-  </figure>
+        <figure>
+            <img src="images/bhava_chakra.png" alt="Bhava Chakra diagram" />
+            <figcaption>Illustration: Bhava Chakra (Bhava Charka)</figcaption>
+        </figure>
 
-  <figure>
-    <img src="images/gunachakra.png" alt="Guna Chakra diagram" />
-    <figcaption>Illustration: Guna Chakra (guna Charka)</figcaption>
-  </figure>
-  <figure>
-    <img src="images/adityas.png" alt="aditya diagram" />
-    <figcaption>Illustration: aditya</figcaption>
-  </figure>
- <figure>
-    <img src="images/desc_aditya.png" alt="desc aditya diagram" />
-    <figcaption>Illustration: Bhava Chakra (Bhava Charka)</figcaption>
-  </figure>
+        <figure>
+            <img src="images/gunachakra.png" alt="Guna Chakra diagram" />
+            <figcaption>Illustration: Guna Chakra (guna Charka)</figcaption>
+        </figure>
 
+        <figure>
+            <img src="images/adityas.png" alt="aditya diagram" />
+            <figcaption>Illustration: aditya</figcaption>
+        </figure>
 
+        <figure>
+            <img src="images/desc_aditya.png" alt="desc aditya diagram" />
+            <figcaption>Illustration: Bhava Chakra (Bhava Charka)</figcaption>
+        </figure>
 
-  <section>
-    <h2>Lagna (Ascendants) and Their Significations</h2>
-    <table>
-      <tr><th>Lagna</th><th>Phase</th><th>Primary Signification</th></tr>
-      <tr><td>Udaya Lagna</td><td>Sunrise</td><td><em>Buddhi</em> – Beginning of day/life</td></tr>
-      <tr><td>Asta Lagna</td><td>Sunset</td><td><em>Vriddhi</em> – Growth as sun sets and moon rises</td></tr>
-      <tr><td>Svarga / Aakash Lagna</td><td>Mid-heaven</td><td><em>Siddhi</em> – Full potential of the Sun</td></tr>
-      <tr><td>Jala Lagna</td><td>Mid-night</td><td><em>Siddhi</em> – Full potential of the Moon</td></tr>
-    </table>
-    <p>These four lagnas are considered <strong>Vishnu sthanas</strong>—they sustain life.</p>
-  </section>
+        <section>
+            <h2>Lagna (Ascendants) and Their Significations</h2>
+            <table>
+                <tr><th>Lagna</th><th>Phase</th><th>Primary Signification</th></tr>
+                <tr><td><strong>Udaya Lagna</strong></td><td>Sunrise</td><td><em>Buddhi</em> – Beginning of day/life</td></tr>
+                <tr><td><strong>Asta Lagna</strong></td><td>Sunset</td><td><em>Vriddhi</em> – Growth as sun sets and moon rises</td></tr>
+                <tr><td><strong>Svarga / Aakash Lagna</strong></td><td>Mid-heaven</td><td><em>Siddhi</em> – Full potential of the Sun</td></tr>
+                <tr><td><strong>Jala Lagna</strong></td><td>Mid-night</td><td><em>Siddhi</em> – Full potential of the Moon</td></tr>
+            </table>
+            <div class="vishnu-note">
+                <p>These four lagnas are considered <strong>Vishnu sthanas</strong>—they sustain life.</p>
+            </div>
+        </section>
 
-  <section>
-    <h2>Strength of Kendras & Graha Groups</h2>
-    <p>The <strong>10th house</strong> is the strongest Kendra.</p>
-    <table>
-      <tr><th>Guna</th><th>Grahas</th><th>Indicative Houses (from Lagna)</th><th>Career Effect</th></tr>
-      <tr><td>Satva (Continuity)</td><td>Sun, Moon, Jupiter</td><td>4, 5, 9, 12 (1, 2, 6, 9)</td><td>Continuity of job &amp; accomplishment</td></tr>
-      <tr><td>Rajas (Activity)</td><td>Venus, Mercury</td><td>2, 3, 6, 7 (11, 12, 3, 4)</td><td>Job fluctuations</td></tr>
-      <tr><td>Tamas (Change)</td><td>Saturn, Mars</td><td>1, 8, 10, 11 (10, 5, 8, 7)</td><td>Job changing</td></tr>
-    </table>
-  </section>
+        <section>
+            <h2>Strength of Kendras & Graha Groups</h2>
+            <div class="note">
+                <p>The <strong>10th house</strong> is the strongest Kendra.</p>
+            </div>
+            <table>
+                <tr><th>Guna</th><th>Grahas</th><th>Indicative Houses (from Lagna)</th><th>Career Effect</th></tr>
+                <tr><td><strong>Satva (Continuity)</strong></td><td>Sun, Moon, Jupiter</td><td>4, 5, 9, 12 (1, 2, 6, 9)</td><td>Continuity of job &amp; accomplishment</td></tr>
+                <tr><td><strong>Rajas (Activity)</strong></td><td>Venus, Mercury</td><td>2, 3, 6, 7 (11, 12, 3, 4)</td><td>Job fluctuations</td></tr>
+                <tr><td><strong>Tamas (Change)</strong></td><td>Saturn, Mars</td><td>1, 8, 10, 11 (10, 5, 8, 7)</td><td>Job changing</td></tr>
+            </table>
+        </section>
 
-  <section>
-    <h2>Guṇa Categories of Grahas</h2>
-    <table>
-      <tr><th>Guṇa Level</th><th>Nature</th><th>Graha(s)</th></tr>
-      <tr><td>Ādhama</td><td>Krūra + Pāpa</td><td>Saturn &amp; Mars</td></tr>
-      <tr><td>Udāsīna</td><td>Saumya + Pāpa</td><td>Mercury &amp; Venus</td></tr>
-      <tr><td>Mahātma</td><td>Krūra + Puṇya</td><td>Sun</td></tr>
-      <tr><td>Uttama</td><td>Saumya + Puṇya</td><td>Moon &amp; Jupiter</td></tr>
-    </table>
-  </section>
+        <section>
+            <h2>Guṇa Categories of Grahas</h2>
+            <table>
+                <tr><th>Guṇa Level</th><th>Nature</th><th>Graha(s)</th></tr>
+                <tr><td><strong>Ādhama</strong></td><td>Krūra + Pāpa</td><td>Saturn &amp; Mars</td></tr>
+                <tr><td><strong>Udāsīna</strong></td><td>Saumya + Pāpa</td><td>Mercury &amp; Venus</td></tr>
+                <tr><td><strong>Mahātma</strong></td><td>Krūra + Puṇya</td><td>Sun</td></tr>
+                <tr><td><strong>Uttama</strong></td><td>Saumya + Puṇya</td><td>Moon &amp; Jupiter</td></tr>
+            </table>
+        </section>
 
-  <section>
-    <h2>Stages of the Moon (Chandra)</h2>
-    <table>
-      <tr><th>Phase Range</th><th>Stage</th></tr>
-      <tr><td>Krishna Aṣṭamī → Amāvasyā</td><td>Ādhama – Most challenging</td></tr>
-      <tr><td>Amāvasyā → Śukla Aṣṭamī</td><td>Udāsīna – Still unfavourable</td></tr>
-      <tr><td>Śukla Aṣṭamī → Pūrṇimā</td><td>Uttama – Most favourable</td></tr>
-      <tr><td>Pūrṇimā → Krishna Aṣṭamī</td><td>Madhyama – Moderate</td></tr>
-    </table>
-  </section>
+        <section>
+            <h2>Stages of the Moon (Chandra)</h2>
+            <table>
+                <tr><th>Phase Range</th><th>Stage</th></tr>
+                <tr><td>Krishna Aṣṭamī → Amāvasyā</td><td><strong>Ādhama</strong> – Most challenging</td></tr>
+                <tr><td>Amāvasyā → Śukla Aṣṭamī</td><td><strong>Udāsīna</strong> – Still unfavourable</td></tr>
+                <tr><td>Śukla Aṣṭamī → Pūrṇimā</td><td><strong>Uttama</strong> – Most favourable</td></tr>
+                <tr><td>Pūrṇimā → Krishna Aṣṭamī</td><td><strong>Madhyama</strong> – Moderate</td></tr>
+            </table>
+        </section>
 
-  <section>
-    <h2>Graha Kārakas (Planetary Significators)</h2>
-    <table>
-      <tr><th>Graha</th><th>Kāraka</th></tr>
-      <tr><td>Surya (Sun)</td><td><em>Ṛta</em> – Cosmic order</td></tr>
-      <tr><td>Chandra (Moon)</td><td><em>Śānti</em> – Peace</td></tr>
-      <tr><td>Mangala (Mars)</td><td><em>Ṣaḍ-ripu</em> – Six vices</td></tr>
-      <tr><td>Budha (Mercury)</td><td><em>Dhyāna</em> – Meditation</td></tr>
-      <tr><td>Guru (Jupiter)</td><td><em>Satya</em> – Truth</td></tr>
-      <tr><td>Śukra (Venus)</td><td><em>Dāra</em> – Spouse/relationships</td></tr>
-      <tr><td>Śani (Saturn)</td><td><em>Makara</em> – Discipline/structure</td></tr>
-    </table>
-  </section>
+        <section>
+            <h2>Graha Kārakas (Planetary Significators)</h2>
+            <table>
+                <tr><th>Graha</th><th>Kāraka</th></tr>
+                <tr><td><strong>Surya (Sun)</strong></td><td><em>Ṛta</em> – Cosmic order</td></tr>
+                <tr><td><strong>Chandra (Moon)</strong></td><td><em>Śānti</em> – Peace</td></tr>
+                <tr><td><strong>Mangala (Mars)</strong></td><td><em>Ṣaḍ-ripu</em> – Six vices</td></tr>
+                <tr><td><strong>Budha (Mercury)</strong></td><td><em>Dhyāna</em> – Meditation</td></tr>
+                <tr><td><strong>Guru (Jupiter)</strong></td><td><em>Satya</em> – Truth</td></tr>
+                <tr><td><strong>Śukra (Venus)</strong></td><td><em>Dāra</em> – Spouse/relationships</td></tr>
+                <tr><td><strong>Śani (Saturn)</strong></td><td><em>Makara</em> – Discipline/structure</td></tr>
+            </table>
+        </section>
 
-  <section>
-    <h2>Ṣaḍ-ripu — The Six Human Vices</h2>
-    <ol>
-      <li><strong>Kāma</strong> – Lust</li>
-      <li><strong>Krodha</strong> – Anger</li>
-      <li><strong>Lobha</strong> – Greed</li>
-      <li><strong>Madā</strong> – Arrogance</li>
-      <li><strong>Moha</strong> – Attachment</li>
-      <li><strong>Mātsarya</strong> – Jealousy</li>
-    </ol>
-  </section>
+        <section>
+            <h2>Ṣaḍ-ripu — The Six Human Vices</h2>
+            <div class="concept">
+                <ol>
+                    <li><strong>Kāma</strong> – Lust</li>
+                    <li><strong>Krodha</strong> – Anger</li>
+                    <li><strong>Lobha</strong> – Greed</li>
+                    <li><strong>Madā</strong> – Arrogance</li>
+                    <li><strong>Moha</strong> – Attachment</li>
+                    <li><strong>Mātsarya</strong> – Jealousy</li>
+                </ol>
+            </div>
+        </section>
 
-  <section>
-    <h2>Pañca-makāra</h2>
-    <ul>
-      <li><strong>Madya</strong> – Alcohol</li>
-      <li><strong>Māṁsa</strong> – Flesh</li>
-      <li><strong>Matsya</strong> (also rendered Marsala) – Fish</li>
-      <li><strong>Maithuna</strong> – Sexual union</li>
-      <li><strong>Mudrā</strong> – Esoteric gesture/posture</li>
-    </ul>
-  </section>
-  <section>
-  <h2>Digpala</h1>
+        <section>
+            <h2>Pañca-makāra</h2>
+            <div class="concept">
+                <ul>
+                    <li><strong>Madya</strong> – Alcohol</li>
+                    <li><strong>Māṁsa</strong> – Flesh</li>
+                    <li><strong>Matsya</strong> (also rendered Marsala) – Fish</li>
+                    <li><strong>Maithuna</strong> – Sexual union</li>
+                    <li><strong>Mudrā</strong> – Esoteric gesture/posture</li>
+                </ul>
+            </div>
+        </section>
 
-  <ul>
-    <li><strong>Ketu in Digpala —</strong> upward direction; Ananta deviate</li>
-    <li><strong>Ketu</strong> signifies high-rise buildings, hilly areas, centre of the country</li>
-    <li><strong>Lagna —</strong> downward motion</li>
-    <li><strong>Digpala from Lagna —</strong> Devata giving knowledge to Lagna</li>
-    <li><strong>Kendra to Arudha Lagna —</strong> blessings in the physical direction</li>
-  </ul>
-  </section>
-  <section>
-    <h1>Graha — Devata — Blessings</h1>
+        <section>
+            <h2>Digpala</h2>
+            <div class="note">
+                <ul>
+                    <li><strong>Ketu in Digpala —</strong> upward direction; Ananta deviate</li>
+                    <li><strong>Ketu</strong> signifies high-rise buildings, hilly areas, centre of the country</li>
+                    <li><strong>Lagna —</strong> downward motion</li>
+                    <li><strong>Digpala from Lagna —</strong> Devata giving knowledge to Lagna</li>
+                    <li><strong>Kendra to Arudha Lagna —</strong> blessings in the physical direction</li>
+                </ul>
+            </div>
+        </section>
 
-  <ul>
-    <li><strong>Surya — Indra:</strong> full oversight; control over things</li>
-    <li><strong>Chandra — Vayu:</strong> makes things happen fast; strength of breath like Hanuman</li>
-    <li><strong>Mangal — Yama:</strong> knowledge about death, longevity, borders, antaka</li>
-    <li><strong>Budha — Kubera:</strong> knowledge about wealth</li>
-    <li><strong>Guru — Isana:</strong> complete knowledge of reasoning and power</li>
-    <li><strong>Shukra — Agni:</strong> visual power, design, creativity</li>
-    <li><strong>Shani — Varuna:</strong> knowledge of labor; can carry huge burdens</li>
-    <li><strong>Rahu — Nirriti:</strong> giver of disorder; can also remove it</li>
-    <li><strong>Ketu — Ananta:</strong> meditation</li>
-    <li><strong>Lagna — Brahma:</strong> longevity</li>
-  </ul>
+        <section>
+            <h2>Graha — Devata — Blessings</h2>
+            <div class="example">
+                <ul>
+                    <li><strong>Surya — Indra:</strong> full oversight; control over things</li>
+                    <li><strong>Chandra — Vayu:</strong> makes things happen fast; strength of breath like Hanuman</li>
+                    <li><strong>Mangal — Yama:</strong> knowledge about death, longevity, borders, antaka</li>
+                    <li><strong>Budha — Kubera:</strong> knowledge about wealth</li>
+                    <li><strong>Guru — Isana:</strong> complete knowledge of reasoning and power</li>
+                    <li><strong>Shukra — Agni:</strong> visual power, design, creativity</li>
+                    <li><strong>Shani — Varuna:</strong> knowledge of labor; can carry huge burdens</li>
+                    <li><strong>Rahu — Nirriti:</strong> giver of disorder; can also remove it</li>
+                    <li><strong>Ketu — Ananta:</strong> meditation</li>
+                    <li><strong>Lagna — Brahma:</strong> longevity</li>
+                </ul>
+            </div>
 
-  <h2>Additional Principles</h2>
-  <ul>
-    <li>Planets conjoined receive the combined blessings of their respective Devatas.</li>
-    <li>Go (or face) in the direction ruled by a planet that has Digpala blessing.</li>
-    <li>Disposition can lock or unlock a planet’s blessing.</li>
-    <li>When a planet is <em>debilitated</em>, seek guidance from the corresponding Mahavidya.</li>
-    <li>Planetary <em>combustion</em> signifies the anger of Shiva.</li>
-    <li>Example chart to study: <strong>Abraham&nbsp;Lincoln</strong>.</li>
-    <li><strong>Rahu + Mangal</strong> combination — Kuja Stambhana.</li>
-  </ul>
-  </section>
-  <footer>
-    <p>Compiled: July 2025</p>
-  </footer>
+            <h3>Additional Principles</h3>
+            <div class="concept">
+                <ul>
+                    <li>Planets conjoined receive the combined blessings of their respective Devatas.</li>
+                    <li>Go (or face) in the direction ruled by a planet that has Digpala blessing.</li>
+                    <li>Disposition can lock or unlock a planet's blessing.</li>
+                    <li>When a planet is <em>debilitated</em>, seek guidance from the corresponding Mahavidya.</li>
+                    <li>Planetary <em>combustion</em> signifies the anger of Shiva.</li>
+                    <li>Example chart to study: <strong>Abraham&nbsp;Lincoln</strong>.</li>
+                    <li><strong>Rahu + Mangal</strong> combination — Kuja Stambhana.</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>Compiled: July 2025</p>
+        </footer>
+    </div>
 </body>
 </html>
