@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Astrology Blog - DBC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <title>~/astrology-blog$ DBC</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     * {
       margin: 0;
@@ -13,274 +13,380 @@
     }
     
     body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: #333;
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      background-color: #0a0a0a;
+      color: #00ff41;
+      line-height: 1.6;
       min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 25% 25%, #003300 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, #001a00 0%, transparent 50%);
     }
     
     header {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 3rem 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.3)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
-      opacity: 0.3;
-    }
-    
-    header h1 {
-      color: white;
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-      position: relative;
-      z-index: 1;
-    }
-    
-    header p {
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 1.2rem;
-      font-weight: 300;
-      position: relative;
-      z-index: 1;
-    }
-    
-    main {
-      max-width: 1000px;
-      margin: -2rem auto 2rem;
-      padding: 0 2rem;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .posts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    
-    .post-preview {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
+      background-color: #000000;
+      border-bottom: 2px solid #00ff41;
       padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
+      font-family: 'JetBrains Mono', monospace;
     }
     
-    .post-preview::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #667eea, #764ba2);
+    .terminal-header {
+      max-width: 900px;
+      margin: 0 auto;
     }
     
-    .post-preview:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.15);
-      background: rgba(255, 255, 255, 1);
+    .terminal-line {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
     }
     
-    .post-preview h2 {
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
+    .prompt {
+      color: #00ff41;
+      margin-right: 1rem;
       font-weight: 600;
     }
     
-    .post-preview a {
-      text-decoration: none;
-      color: #2d3748;
-      display: block;
-      transition: color 0.3s ease;
-    }
-    
-    .post-preview a:hover {
-      color: #667eea;
-    }
-    
-    .post-preview p {
-      color: #718096;
-      line-height: 1.6;
-      font-size: 1rem;
-    }
-    
-    .post-category {
+    .cursor {
       display: inline-block;
-      background: linear-gradient(90deg, #667eea, #764ba2);
-      color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
+      width: 10px;
+      height: 20px;
+      background-color: #00ff41;
+      animation: blink 1s infinite;
+      margin-left: 5px;
+    }
+    
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+    
+    header h1 {
+      font-size: 1.8rem;
       font-weight: 500;
+      color: #00ff41;
+      margin: 0;
+    }
+    
+    .subtitle {
+      color: #33ff66;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      opacity: 0.8;
+    }
+    
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .directory-header {
+      color: #00ff41;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #003300;
+      padding-bottom: 1rem;
+    }
+    
+    .file-list {
+      list-style: none;
+    }
+    
+    .file-item {
+      background-color: rgba(0, 255, 65, 0.03);
+      border: 1px solid #003300;
       margin-bottom: 1rem;
+      padding: 1.5rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .file-item:hover {
+      background-color: rgba(0, 255, 65, 0.08);
+      border-color: #00ff41;
+      box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+    }
+    
+    .file-meta {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+    }
+    
+    .file-permissions {
+      color: #66ff99;
+      margin-right: 1rem;
+      font-weight: 500;
+    }
+    
+    .file-type {
+      color: #33ff66;
+      margin-right: 1rem;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      font-size: 0.75rem;
+      background-color: rgba(0, 255, 65, 0.1);
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+    }
+    
+    .file-size {
+      color: #80ff80;
+      font-size: 0.75rem;
+      margin-left: auto;
+    }
+    
+    .file-name {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .file-name a {
+      color: #00ff41;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    
+    .file-name a:hover {
+      color: #66ff99;
+      text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+    }
+    
+    .file-description {
+      color: #80ff80;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+    
+    .command-line {
+      background-color: #000000;
+      border: 1px solid #00ff41;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border-radius: 2px;
+      font-size: 0.85rem;
+    }
+    
+    .comment {
+      color: #66ff99;
+      font-style: italic;
     }
     
     footer {
+      background-color: #000000;
+      border-top: 2px solid #00ff41;
+      padding: 1.5rem;
       text-align: center;
-      padding: 3rem 2rem;
-      color: rgba(255, 255, 255, 0.8);
-      background: rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(10px);
-      margin-top: 4rem;
+      margin-top: 3rem;
+    }
+    
+    footer p {
+      color: #80ff80;
+      font-size: 0.9rem;
     }
     
     footer a {
-      color: rgba(255, 255, 255, 0.9);
+      color: #00ff41;
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s ease;
     }
     
     footer a:hover {
-      color: white;
+      color: #66ff99;
+      text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
     }
     
-    /* Responsive Design */
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #0a0a0a;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #00ff41;
+      border-radius: 6px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #66ff99;
+    }
+    
+    /* Responsive */
     @media (max-width: 768px) {
-      header {
-        padding: 2rem 1rem;
+      header, main, footer {
+        padding: 1rem;
       }
       
-      header h1 {
-        font-size: 2.2rem;
+      .file-meta {
+        flex-direction: column;
+        align-items: flex-start;
       }
       
-      main {
-        padding: 0 1rem;
-      }
-      
-      .posts-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-      
-      .post-preview {
-        padding: 1.5rem;
+      .file-size {
+        margin-left: 0;
+        margin-top: 0.5rem;
       }
     }
     
-    /* Loading Animation */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
+    /* Loading animations */
+    .file-item {
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: slideIn 0.5s ease forwards;
+    }
+    
+    @keyframes slideIn {
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
       }
     }
     
-    .post-preview {
-      animation: fadeInUp 0.6s ease forwards;
-    }
-    
-    .post-preview:nth-child(1) { animation-delay: 0.1s; }
-    .post-preview:nth-child(2) { animation-delay: 0.2s; }
-    .post-preview:nth-child(3) { animation-delay: 0.3s; }
-    .post-preview:nth-child(4) { animation-delay: 0.4s; }
-    .post-preview:nth-child(5) { animation-delay: 0.5s; }
-    .post-preview:nth-child(6) { animation-delay: 0.6s; }
-    .post-preview:nth-child(7) { animation-delay: 0.7s; }
-    .post-preview:nth-child(8) { animation-delay: 0.8s; }
-    .post-preview:nth-child(9) { animation-delay: 0.9s; }
-    .post-preview:nth-child(10) { animation-delay: 1s; }
+    .file-item:nth-child(1) { animation-delay: 0.1s; }
+    .file-item:nth-child(2) { animation-delay: 0.2s; }
+    .file-item:nth-child(3) { animation-delay: 0.3s; }
+    .file-item:nth-child(4) { animation-delay: 0.4s; }
+    .file-item:nth-child(5) { animation-delay: 0.5s; }
+    .file-item:nth-child(6) { animation-delay: 0.6s; }
+    .file-item:nth-child(7) { animation-delay: 0.7s; }
+    .file-item:nth-child(8) { animation-delay: 0.8s; }
+    .file-item:nth-child(9) { animation-delay: 0.9s; }
+    .file-item:nth-child(10) { animation-delay: 1s; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Astrology Chronicles</h1>
-    <p>Exploring the Cosmic Dance of Planets & Stars</p>
+    <div class="terminal-header">
+      <div class="terminal-line">
+        <span class="prompt">user@cosmos:~/astrology-studies$</span>
+        <h1>ls -la blog/</h1>
+        <span class="cursor"></span>
+      </div>
+      <p class="subtitle comment"># Exploring ancient wisdom through terminal interface</p>
+    </div>
   </header>
   
   <main>
-    <div class="posts-grid">
-      <article class="post-preview">
-        <div class="post-category">Lunar Calendar</div>
-        <h2><a href="posts/first-post.html">Tithi</a></h2>
-        <p>Dive deep into the lunar days and their profound significance in Vedic astrology. Understanding the rhythm of time.</p>
-      </article>
+    <div class="directory-header">
+      total 10 files - /home/user/astrology-studies/blog/
+    </div>
+    
+    <ul class="file-list">
+      <li class="file-item">
+        <div class="file-meta">
+          <span class="file-permissions">-rw-r--r--</span>
+          <span class="file-type">lunar</span>
+          <span class="file-size">2.3k</span>
+        </div>
+        <h2 class="file-name"><a href="posts/first-post.html">tithi.md</a></h2>
+        <p class="file-description"># Understanding lunar days and their cosmic significance in Vedic timekeeping</p>
+      </li>
 
-      <article class="post-preview">
-        <div class="post-category">Star Constellations</div>
-        <h2><a href="posts/nakshatra.html">Nakshatras</a></h2>
-        <p>Explore the 27 celestial mansions and their influence on human consciousness and destiny.</p>
-      </article>
+      <li class="file-item">
+        <div class="file-meta">
+          <span class="file-permissions">-rw-r--r--</span>
+          <span class="file-type">stars</span>
+          <span class="file-size">4.1k</span>
+        </div>
+        <h2 class="file-name"><a href="posts/nakshatra.html">nakshatras.md</a></h2>
+        <p class="file-description"># The 27 celestial mansions and their influence on consciousness</p>
+      </li>
       
-      <article class="post-preview">
-        <div class="post-category">Time Cycles</div>
-        <h2><a href="posts/panchanga.html">Panchanga</a></h2>
-        <p>The five-limbed calendar system that governs auspicious timing and cosmic harmony.</p>
-      </article>
+      <li class="file-item">
+        <div class="file-meta">
+          <span class="file-permissions">-rw-r--r--</span>
+          <span class="file-type">time</span>
+          <span class="file-size">3.7k</span>
+        </div>
+        <h2 class="file-name"><a href="posts/panchanga.html">panchanga.md</a></h2>
+        <p class="file-description"># Five-limbed calendar system governing cosmic rhythms</p>
+      </li>
       
-      <article class="post-preview">
-        <div class="post-category">Zodiac Signs</div>
-        <h2><a href="posts/rashi.html">Rashi</a></h2>
-        <p>Understanding the twelve zodiacal divisions and their archetypal energies in Vedic astrology.</p>
-      </article>
+      <li class="file-item">
+        <div class="file-meta">
+          <span class="file-permissions">-rw-r--r--</span>
+          <span class="file-type">signs</span>
+          <span class="file-size">5.2k</span>
+        </div>
+        <h2 class="file-name"><a href="posts/rashi.html">rashi.md</a></h2>
+        <p class="file-description"># Twelve zodiacal divisions and their archetypal energies</p>
+      </li>
       
-      <article class="post-preview">
-        <div class="post-category">Planetary Forces</div>
-        <h2><a href="posts/graha.html">Graha - Part I</a></h2>
-        <p>The celestial influencers and their power to eclipse consciousness. Foundation concepts.</p>
-      </article>
+      <li class="file-item">
+        <div class="file-meta">
+          <span class="file-permissions">-rw-r--r--</span>
+          <span class="file-type">graha</span>
+          <span class="file-size">6.8k</span>
+        </div>
+        <h2 class="file-name"><a href="posts/graha.html">graha_01.md</a></h2>
+        <p class="file-description"># Planetary forces that eclipse consciousness - fundamentals</p>
+      </li>
       
-      <article class="post-preview">
-        <div class="post-category">Planetary Forces</div>
-        <h2><a href="posts/graha2.html">Graha - Part II</a></h2>
-        <p>Advanced understanding of planetary motions, retrogrades, and their karmic implications.</p>
-      </article>
+      <li class="file-item">
+        <div class="file-meta">
+          <span class="file-permissions">-rw-r--r--</span>
+          <span class="file-type">graha</span>
+          <span class="file-size">7.3k</span>
+        </div>
+        <h2 class="file-name"><a href="posts/graha2.html">graha_02.md</a></h2>
+        <p class="file-description"># Advanced planetary motion and retrograde phenomena</p>
+      </li>
       
-      <article class="post-preview">
-        <div class="post-category">Planetary Forces</div>
-        <h2><a href="posts/graha3.html">Graha - Part III</a></h2>
-        <p>The deeper mysteries of planetary relationships and their influence on human experience.</p>
-      </article>
+      <li class="file-item">
+        <div class="file-meta">
+          <span class="file-permissions">-rw-r--r--</span>
+          <span class="file-type">graha</span>
+          <span class="file-size">5.9k</span>
+        </div>
+        <h2 class="file-name"><a href="posts/graha3.html">graha_03.md</a></h2>
+        <p class="file-description"># Planetary relationships and karmic implications</p>
+      </li>
       
-      <article class="post-preview">
-        <div class="post-category">Planetary Aspects</div>
-        <h2><a href="posts/rashi_drishti.html">Graha Drishti</a></h2>
-        <p>The planetary gaze and how celestial bodies influence each other across the zodiac.</p>
-      </article>
+      <li class="file-item">
+        <div class="file-meta">
+          <span class="file-permissions">-rw-r--r--</span>
+          <span class="file-type">drishti</span>
+          <span class="file-size">4.5k</span>
+        </div>
+        <h2 class="file-name"><a href="posts/rashi_drishti.html">graha_drishti.md</a></h2>
+        <p class="file-description"># Planetary gaze and celestial influence patterns</p>
+      </li>
       
-      <article class="post-preview">
-        <div class="post-category">Sign Aspects</div>
-        <h2><a href="posts/rashi_drishti_1.html">Rashi Drishti</a></h2>
-        <p>Understanding how zodiac signs share information and influence through mutual aspects.</p>
-      </article>
+      <li class="file-item">
+        <div class="file-meta">
+          <span class="file-permissions">-rw-r--r--</span>
+          <span class="file-type">drishti</span>
+          <span class="file-size">3.8k</span>
+        </div>
+        <h2 class="file-name"><a href="posts/rashi_drishti_1.html">rashi_drishti.md</a></h2>
+        <p class="file-description"># Sign-based aspects and information sharing</p>
+      </li>
       
-      <article class="post-preview">
-        <div class="post-category">House System</div>
-        <h2><a href="posts/bhava_chakra.html">Bhava Chakra</a></h2>
-        <p>The wheel of houses and their role in shaping life experiences and karmic patterns.</p>
-      </article>
+      <li class="file-item">
+        <div class="file-meta">
+          <span class="file-permissions">-rw-r--r--</span>
+          <span class="file-type">houses</span>
+          <span class="file-size">8.1k</span>
+        </div>
+        <h2 class="file-name"><a href="posts/bhava_chakra.html">bhava_chakra.md</a></h2>
+        <p class="file-description"># House system mapping complete human experience</p>
+      </li>
+    </ul>
+    
+    <div class="command-line">
+      <span class="prompt">user@cosmos:~/astrology-studies$</span> cat README.md <span class="comment"># Ancient wisdom through modern lens</span>
     </div>
   </main>
   
   <footer>
-    &copy; 2025 DBC Astrology Chronicles – <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+    <p>&copy; 2025 DBC Terminal Blog | <a href="https://github.com/yourusername" target="_blank">./github</a> | <span class="comment">exit 0</span></p>
   </footer>
 </body>
 </html>
